@@ -1,16 +1,14 @@
-
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 
-function Gallery() {
-    
+function Contactus() {
   return (
     <div>
       <Navbar />
-      Gallery
+      Contactus
       <Footer />
     </div>
   );
 }
 
-export default Gallery;
+export default Contactus;
