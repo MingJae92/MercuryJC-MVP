@@ -1,11 +1,16 @@
 // controllers/imageController.js
 import { Client, Storage } from "appwrite";
+import dotenv from 'dotenv';
+
+
+// Load environment variables from .env file
+dotenv.config({ path: '../../config/.env' });
 
 // Initialize Appwrite client
 const client = new Client();
 client
   .setEndpoint("https://cloud.appwrite.io/v1") // Appwrite Cloud API
-  .setProject("67c4e0e10034aa6a1341"); // Your Appwrite Project ID
+  .setProject(process.env.PROJECT_ID); // Your Appwrite Project ID
 
 const storage = new Storage(client);
 
@@ -13,7 +18,7 @@ const storage = new Storage(client);
 const fetchArtworkFiles = async (req, res) => {
   try {
     // Replace with your actual bucket ID
-    const files = await storage.listFiles("67c5e949002d5263a64b");
+    const files = await storage.listFiles(process.env.ARTWORK_BUCKET_ID);
 
     // Log fetched files for debugging
     console.log("Artwork files fetched:", files.files);
