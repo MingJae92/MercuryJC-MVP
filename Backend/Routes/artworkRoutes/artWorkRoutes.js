@@ -3,6 +3,6 @@ import artworkControllers from "../../controllers/artworkControllers/artworkCont
 
 const router = express.Router()
 
-router.get("/artwork", artworkControllers.fetchartworkFiles)
+router.get("/artwork", artworkControllers.fetchArtworkFiles)
 
 export default router
