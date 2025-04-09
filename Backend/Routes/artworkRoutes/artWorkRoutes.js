@@ -1,8 +1,9 @@
-import express from "express"
-import artworkControllers from "../../controllers/artworkControllers/artworkControllers"
+// routes/artworkRoutes.js
+import express from "express";
+import artworkControllers from "../../controllers/artworkControllers/artworkControllers.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/artwork", artworkControllers.fetchArtworkFiles)
+router.get("/", artworkControllers.fetchArtworkFiles);
 
-export default router
+export default router;
